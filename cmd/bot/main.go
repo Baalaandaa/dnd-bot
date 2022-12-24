@@ -24,6 +24,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	fmt.Println("??")
 
 	repo := repository.NewRAMRepository()
 	cubeC := cube.NewController(repo)
