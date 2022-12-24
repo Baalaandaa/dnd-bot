@@ -10,4 +10,4 @@ RUN go mod download
 
 COPY . .
 
-CMD ["go", "run", "/app/cmd/api/main.go"]
+CMD ["go", "run", "/app/cmd/bot/main.go"]
