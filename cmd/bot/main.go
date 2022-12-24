@@ -4,8 +4,8 @@ import (
 	"dnd-bot/internal/controllers/cube"
 	"dnd-bot/internal/controllers/formula"
 	"dnd-bot/internal/repository"
+	"fmt"
 	"gopkg.in/telebot.v3"
-	"log"
 	"math/rand"
 	"os"
 	"time"
@@ -17,10 +17,11 @@ func main() {
 		Token:  os.Getenv("TOKEN"),
 		Poller: &telebot.LongPoller{Timeout: 2 * time.Second},
 	}
-
+	fmt.Println(pref.Token)
+	fmt.Println("START")
 	bot, err := telebot.NewBot(pref)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 		return
 	}
 
@@ -36,6 +37,6 @@ func main() {
 		ctx.Reply("Hello!", menu)
 		return nil
 	})
-
+	fmt.Println("START")
 	bot.Start()
 }
