@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  dnd_bot:
+    environment:
+      - TOKEN
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name: dnd_bot
